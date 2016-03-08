@@ -9,7 +9,7 @@ Customer::~Customer()
 {
 }
 
-void Customer::setData(ifstream &) const
+void Customer::setData(istream &) const
 {
 }
 

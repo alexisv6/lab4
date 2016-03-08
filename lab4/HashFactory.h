@@ -29,7 +29,7 @@ public:
 	*	set pointers to null
 	*/
 	//PSEUDO DESCRIPTION -- Create Movie Item //
-	Item* createMovie(char code, ifstream &);
+	Item* createMovie(char code, istream &);
 	/*
 	* takes in code and ifstream
 	* hashes the code to check if valid movie code
@@ -39,7 +39,7 @@ public:
 	*	create the movie item that will be returned
 	*/
 	//PSEUDO DESCRIPTION -- CREATE TRANSACTION //
-	Transaction* createTransaction(char type, ifstream &);
+	Transaction* createTransaction(char type, istream &);
 	/*
 	* takes in code and ifstream
 	* hashes the code to check if valid transaction code

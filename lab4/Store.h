@@ -2,8 +2,14 @@
 #define STORE_H
 #include <string>
 #include <iostream>
+#include "Item.h"
+#include "HashFactory.h"
+#include "BinTree.h"
+#include "Customer.h"
 using namespace std;
+const int MAX_COPIES = 10;
 const int MAX_CUSTOMERS = 10000;
+const int MAX_GENRES = 27;
 const int MAX_TRANSACTIONS = 26;
 
 class Store
@@ -25,7 +31,7 @@ public:
 	// DEFAULT DESTRUCTOR
 	~Store();
 	//PSEUDO DESCRIPTION -- DO INVENTORY //
-	void doInventory(ifstream &);
+	void doInventory(istream &);
 	/*
 	* char code = ""
 	* for each line in the file 

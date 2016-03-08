@@ -8,11 +8,11 @@ class Customer: public Person
 {
 public:
 	Customer();
-	Customer(ifstream &);
+	Customer(istream &);
 	Customer(const Customer&);
 	~Customer();
 	int getID() const;
-	virtual void setData(ifstream&);
+	virtual void setData(istream&) const;
 	string getData();
 	void displayHistory() const;
 	void addHistoryItem(Transaction);

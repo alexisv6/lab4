@@ -1,4 +1,7 @@
 #include <iostream>
+#include <string>
+#include "Item.h"
+using namespace std;
 class Transaction
 {
 public:
@@ -49,6 +52,6 @@ public:
 protected:
 	string transactionType;
 	string mediaType;
-	Item* theItem;
+	Item* thisItem;
 };
 

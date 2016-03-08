@@ -7,7 +7,7 @@ public:
 	Item();
 	Item(const Item&);
 	virtual ~Item();
-	virtual void setData(ifstream &) = 0;
+	virtual void setData(istream &) = 0;
 	virtual void Display()const = 0;
 	void setMaxCopies(const int);
 	void increaseCopies();
