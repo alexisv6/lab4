@@ -56,6 +56,9 @@ public:
 	*
 	*/
 	//PSEUDO DESCRIPTION -- Display Inventory //
+	
+	void PopulateAccounts(istream &theStream);
+
 	void diplayInventory() const;
 	/*
 	*	print out name of store
