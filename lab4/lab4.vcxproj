@@ -149,6 +149,7 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BinTree.h" />
     <ClInclude Include="BorrowTrans.h" />
     <ClInclude Include="ClassicDVD.h" />
     <ClInclude Include="ComedyDVD.h" />
@@ -166,6 +167,7 @@
     <ClInclude Include="Transaction.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="BinTree.cpp" />
     <ClCompile Include="BorrowTrans.cpp" />
     <ClCompile Include="ClassicDVD.cpp" />
     <ClCompile Include="ComedyDVD.cpp" />
