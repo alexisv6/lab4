@@ -9,8 +9,8 @@ public:
 	BinTree();
 	~BinTree();
 
-	bool Insert(Item *theItem, int maxCopies);
-	bool Retrieve(const Item *theItem, Item *&foundItem);
+	bool Insert(Item *theItem, int amt);
+	bool Retrieve(const Item &theItem, Item *&foundItem);
 	bool isEmpty() const;
 	void makeEmpty();
 
@@ -22,5 +22,8 @@ private:
 		Node *rightChild;
 	};
 	Node *root;
+	
+	void chopDownTree(Node *&root);
+	void getFromTree(Node *root, const Item &theItem, Item *& foundItem);
 };
 
