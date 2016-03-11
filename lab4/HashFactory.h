@@ -58,9 +58,9 @@ public:
 	string getMediaType(char type);
 	
 private:
-	string mediaType[MAX_TRANSACTIONS];
 	Item* movieGenre[MAX_GENRES];
 	Transaction* transactionType[MAX_TRANSACTIONS];
+	string mediaTypes[MAX_TRANSACTIONS];
 };
 #endif
 
