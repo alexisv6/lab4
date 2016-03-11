@@ -46,7 +46,7 @@ Item * ClassicDVD::create()
 bool ClassicDVD::operator==(const Item &rhs) const
 {
 	const ClassicDVD& theDVD = static_cast<const ClassicDVD&>(rhs);
-	return year == theDVD.year && month == theDVD.month && majorActors.front() == theDVD.majorActors.front();
+	return year == theDVD.year && month == theDVD.month;
 }
 
 bool ClassicDVD::operator<(const Item &rhs) const
