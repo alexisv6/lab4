@@ -205,3 +205,13 @@ void Store::PopulateAccounts(istream & theStream)
 		newCustomer = NULL;
 	}
 }
+
+bool Store::customerExists(int id) const
+{
+	return customerAccounts[id].getID() == 0;
+}
+
+string Store::getStoreName() const
+{
+	return this->name;
+}

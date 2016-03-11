@@ -80,7 +80,7 @@ string ClassicDVD::getItem() const
 void ClassicDVD::display() const
 {
 	cout << title << " " << director << " " << year << " " << genre;
-	for (int i = 0; i < majorActors.size(); i++)
+	for (int i = 0; i < (int)majorActors.size(); i++)
 	{
 		cout << " " << majorActors[i];
 	}

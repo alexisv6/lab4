@@ -1,8 +1,4 @@
-#include "stdafx.h"
 #include "HistoryTrans.h"
-
-
-
 HistoryTrans::HistoryTrans()
 {
 	this->transactionType = "History";

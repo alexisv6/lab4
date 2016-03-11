@@ -1,7 +1,9 @@
 #ifndef RETURN_TRANSACTION_H
 #define RETURN_TRANSACTION_H
 #include "Transaction.h"
-//class Customer;
+#include "Item.h"
+using namespace std;
+class Customer;
 class ReturnTrans :
 	public Transaction
 {

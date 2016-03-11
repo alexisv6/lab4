@@ -1,7 +1,9 @@
 #ifndef HISTORY_TRANS_H
 #define HISTORY_TRANS_H
 #include "Transaction.h"
-//class Customer;
+#include "Item.h"
+#include "Customer.h"
+using namespace std;
 class HistoryTrans :
 	public Transaction
 {

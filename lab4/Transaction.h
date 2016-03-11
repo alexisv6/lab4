@@ -2,11 +2,9 @@
 #define TRANSACTION_H
 #include <iostream>
 #include <string>
-#include "Customer.h"
 #include "Item.h"
-class Customer;
-//class Transaction;
 using namespace std;
+class Customer;
 class Transaction
 {
 public:
@@ -21,20 +19,20 @@ public:
 	/*
 	* set each value
 	*/
-	virtual~Transaction();
+	virtual ~Transaction();
 	//PSEUDO DESCRIPTION -- Set Data //
-	virtual void setData(string media, Item *theItem, Customer *theCustomer) = 0;
+	virtual void setData(string media, Item *theItem, Customer *theCustomer);
 	/*
 	* uses instream to get the data
 	* of the transaction into the obj
 	*/
 	//PSEUDO DESCRIPTION -- DISPLAY //
-	virtual void Display() const = 0;
+	virtual void Display() const;
 	/*
 	* cout the tranasaction 
 	*/
 	//PSEUDO DESCRIPTION -- Create Transaction //
-	virtual Transaction* create() = 0;
+	virtual Transaction* create();
 	/*
 	* return a newly created transaction object
 	*/
