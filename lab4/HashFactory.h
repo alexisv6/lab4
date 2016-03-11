@@ -5,6 +5,7 @@
 #include "ClassicDVD.h"
 #include "ComedyDVD.h"
 #include "DramaDVD.h"
+#include "Store.h"
 #include "Transaction.h"
 #include "BorrowTrans.h"
 #include "HistoryTrans.h"
@@ -59,4 +60,5 @@ private:
 	Item* movieGenre[MAX_GENRES];
 	Transaction* transactionType[MAX_TRANSACTIONS];
 };
+#endif
 
