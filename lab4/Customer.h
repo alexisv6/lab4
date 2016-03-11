@@ -8,6 +8,7 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include <cstring>
 using namespace std;
 
 class Customer: public Person
@@ -36,5 +37,7 @@ public:
 private:
 	int id; // the unique ID for the Customer
 	vector<Transaction> transHistory; // a vector of all the borrowing and returns the Customer has done
+
+	//void print(vector)
 
 };

@@ -39,17 +39,6 @@ bool ComedyDVD::operator==(const ComedyDVD &rhs) const
 	
 	return title == rhs.title && year == rhs.year;
 }
-
-bool ComedyDVD::operator!=(const ComedyDVD &) const
-{
-	return false;
-}
-
-bool ComedyDVD::operator>(const ComedyDVD &) const
-{
-	return false;
-}
-
 bool ComedyDVD::operator<(const ComedyDVD &rhs) const
 {
 	if (title < rhs.title)
@@ -65,17 +54,6 @@ bool ComedyDVD::operator<(const ComedyDVD &rhs) const
 		return false;
 	}
 }
-
-bool ComedyDVD::operator>=(const ComedyDVD &) const
-{
-	return false;
-}
-
-bool ComedyDVD::operator<=(const ComedyDVD &) const
-{
-	return false;
-}
-
 string ComedyDVD::getItem() const
 {
 	return title;

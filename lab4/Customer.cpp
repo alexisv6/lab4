@@ -53,11 +53,12 @@ string Customer::getData()
 
 void Customer::displayHistory() const
 {
-	cout << "Customer ID = " << id << " " << lastName << " " << firstName << endl;
+	cout << "Customer ID = " << id << " " << lastName << " " << firstName;
 	
 	for (int i = 0; i < transHistory.size(); i++)
 	{
-		transHistory[i];
+		cout << " ";
+		transHistory[i].Display;
 	}
 	cout << endl;
 }
