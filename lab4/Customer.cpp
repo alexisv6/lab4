@@ -7,7 +7,7 @@ Customer::Customer() :id(0)
 	lastName = "";
 }
 
-Customer::Customer(ifstream &infile)
+Customer::Customer(istream &infile)
 {
 	setData(infile);
 }
@@ -35,7 +35,7 @@ int Customer::getID() const
 	return id;
 }
 
-void Customer::setData(ifstream &infile)
+void Customer::setData(istream &infile)
 {
 	infile >> id; //read customer ID number
 

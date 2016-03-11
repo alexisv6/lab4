@@ -17,7 +17,7 @@ public:
 	//PSEUDO DESCRIPTION -- Destructor //
 	virtual~ReturnTrans();
 	//PSEUDO DESCRIPTION -- Set DAta //
-	virtual void setData(ifstream &);
+	virtual void setData(string media, Item *theItem, Customer *theCustomer);
 	/*
 	* gets the file stream to set the information
 	* for this tranascation of type RETURN

@@ -18,7 +18,7 @@ public:
 	string getName() const; // return the full name as a string, first name last name
 	string getLastName() const; // return the last name as a string
 	string getFirstName() const; // return the first name as a string
-	virtual void setData(ifstream&) = 0; // a pure virtual function that child classes will need to use
+	virtual void setData(istream&) = 0; // a pure virtual function that child classes will need to use
 										 // It will take in data from a file and fill out all the needed information
 										 // from the file
 protected:

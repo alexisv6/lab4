@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include "Customer.h"
 #include "Item.h"
 using namespace std;
 class Transaction
@@ -18,7 +19,7 @@ public:
 	*/
 	virtual~Transaction();
 	//PSEUDO DESCRIPTION -- Set Data //
-	virtual void setData(ifstream &) = 0;
+	virtual void setData(string media, Item *theItem, Customer *theCustomer) = 0;
 	/*
 	* uses instream to get the data
 	* of the transaction into the obj

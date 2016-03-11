@@ -65,8 +65,8 @@ void Store::readTransactions(ifstream &theStream)
 	string media = "";
 
 	Customer* theCustomer = NULL;
-	Item* movieLocation = NULL;
-	Item *theMovie = NULL;
+	Item* theMovie = NULL;
+	Item *tempMovie = NULL;
 	bool found = false;
 	for (;;)
 	{
@@ -75,18 +75,12 @@ void Store::readTransactions(ifstream &theStream)
 		{
 			break;
 		}
-		
-		if (actionType == 'S') // or invalid 
-		{
-			// what to do when invalid
-			// actionType = ' ';
-		}
 		else if (theStream.get() == '\n') //Do I need FIX
 		{
 			actionType = ' ';
 		}
 		else
-		{  
+		{
 			//create trans object
 			Transaction* newTransaction =
 				factory.createTransaction(actionType, theStream);
@@ -102,119 +96,95 @@ void Store::readTransactions(ifstream &theStream)
 				if (customerExists(customerID))
 				{
 					theCustomer = &customerAccounts[customerID];
-					//set data
-					bool isHistoryAction = (actionType == 'H');
-					if (isHistoryAction) {
-						newTransaction->setData(theStream);
-					}
-
-					if (theStream.get() != (isHistoryAction && '\n'))
+					char mediaCode = ' ';
+					switch (actionType)
 					{
-						theStream >> mediaType;
-						//get media code from factory
-						media = factory.getMediaType(mediaType);
-
+					case 'B' || 'R':
+						theStream >> mediaCode;
+						media = factory.getMediaType(mediaCode);
 						if (media != "")
 						{
-							theStream >> movieType; //get movie genre
-
-												  //create new movie object used for comaprison
-							theMovie = factory.createMovie(movieType, theStream);
-
-							if (theMovie != NULL)
+							theStream >> movieType;
+							tempMovie = factory.createMovie(movieType, theStream);
+							if (tempMovie != NULL) // was genre found
 							{
-								theMovie->setData(theStream);
-								//Retrieve VideoStoreItem* in BST
-								found = movieInventory[factory.hash(movieType)]
-									.Retrieve(*theMovie, movieLocation);
+								tempMovie->setData(theStream);
 
-								if (found == false) //if movie is not found
+								found = movieInventory->Retrieve(*tempMovie, theMovie);
+								if (found)
 								{
-									cout << "ERROR: Invalid Movie "
-										<< "PRINT ITEM NAME>????" << endl;
-								}
-								delete theMovie; //Delete after using as search key
-								theMovie = NULL;
-
-								//check if movie found and mediatype exists
-								if (found && media != "")
-								{
-									//Add transaction to customer account
+									newTransaction->setData(media, theMovie, theCustomer);
 									customerAccounts[customerID].addHistoryItem(*newTransaction);
 								}
-								delete newTransaction;
-								newTransaction = NULL;
+								else
+								{
+									cout << "ERROR: Invalid Movie ";
+									tempMovie->Display();
+									cout << endl;
+								}
 							}
 							else
 							{
-								cout << "ERROR: Genre: " << movieType << " not found"
-									<< endl;
-
-								//Check if transaction was deleted
-								if (newTransaction != NULL)
-								{
-									delete newTransaction;
-									newTransaction = NULL;
-								}
-								//discard rest of line
-								string temp;
-								getline(theStream, temp, '\n');
-								delete theMovie;
-								theMovie = NULL;
+								cout << "ERROR: Invalid Genre " << movieType << endl;
+								string badData;
+								getline(theStream, badData, '\n');
 							}
-
 						}
 						else
 						{
-							//discard rest of line
-							string temp;
-							getline(theStream, temp, '\n');
-
-							cout << "ERROR: Invalid Media Code: "
-								<< mediaType << endl;
-
-							if (newTransaction != NULL)
-								delete newTransaction;
-								newTransaction = NULL;
+							cout << "ERROR: Invalid Media Type " << mediaCode << endl;
+							string badData;
+							getline(theStream, badData, '\n');
 						}
+					case 'H':
+						newTransaction->setData(media, theMovie, theCustomer);
+					}
 
-					}
-					else
+					delete tempMovie;
+					tempMovie = NULL;
+					if (newTransaction != NULL)
 					{
-						if (newTransaction != NULL)
-							delete newTransaction;
-							newTransaction = NULL;
+						delete newTransaction;
+						newTransaction = NULL;
 					}
+
 				}
 				else
 				{
-					cout << "ERROR: Customer ID: " << customerID
-						<< " not found" << endl;
-
+					// customer doesnt exist
+					cout << "ERROR: Customer ID " << customerID;
+					cout << " does not exist" << endl;
+					string badData;
+					getline(theStream, badData, '\n');
+					delete tempMovie;
+					tempMovie = NULL;
 					if (newTransaction != NULL)
+					{
 						delete newTransaction;
 						newTransaction = NULL;
-
-					//discard rest of line
-					string temp;
-					getline(theStream, temp, '\n');
+					}
 				}
 			}
 			else
 			{
-				cout << "ERROR: Action Code: " << actionType
-					<< " not found" << endl;
-
+				// invalid action/transaction
+				cout << "ERROR: Invalid Action Code " << actionType << endl;
+				string badData;
+				getline(theStream, badData, '\n');
+				delete tempMovie;
+				tempMovie = NULL;
 				if (newTransaction != NULL)
+				{
 					delete newTransaction;
 					newTransaction = NULL;
+				}
 			}
 		}
 		found = false;
-		customerID = 0;
-		movieLocation = NULL;
-		theCustomer = NULL;
 		theMovie = NULL;
+		theCustomer = NULL;
+		tempMovie = NULL;
+		customerID = 0;
 	}
 }
 

@@ -14,13 +14,13 @@ class Customer: public Person
 {
 public:
 	Customer();
-	Customer(ifstream &);
+	Customer(istream &);
 	Customer(const Customer&);
 	~Customer();
 
 
 	int getID() const; // return the customer ID
-	virtual void setData(ifstream&); // read the Customer's data from a file and save all information for them
+	virtual void setData(istream&); // read the Customer's data from a file and save all information for them
 	string getData(); // return the ID number, first name, last name as a string
 	void displayHistory() const; // print out the Customer’s borrow and return history to the display
 	void addHistoryItem(Transaction &); // add a transaction to the Customer’s history

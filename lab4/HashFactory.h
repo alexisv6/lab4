@@ -55,8 +55,10 @@ public:
 	*	function that will take a char passed in 
 	*   and hash it to an index within the genre and trans arrays
 	*/
+	string getMediaType(char type);
 	
 private:
+	string mediaType[MAX_TRANSACTIONS];
 	Item* movieGenre[MAX_GENRES];
 	Transaction* transactionType[MAX_TRANSACTIONS];
 };

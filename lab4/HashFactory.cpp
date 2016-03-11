@@ -89,3 +89,14 @@ Transaction * HashFactory::createTransaction(char type, istream &theStream)
 		return NULL;
 	}
 }
+
+int HashFactory::hash(char code)
+{
+	int hashVal = code % MAX_TRANSACTIONS;
+	return hashVal;
+}
+
+string HashFactory::getMediaType(char type)
+{
+	return mediaType[hash(type)];
+}
