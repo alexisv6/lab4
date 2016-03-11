@@ -93,6 +93,28 @@ void BinTree::makeEmpty()
 	chopDownTree(root);
 }
 
+void BinTree::Display() const
+{
+	display(root);
+}
+
+void BinTree::display(Node * curr) const
+{
+	if (curr == root)
+	{
+		curr->data->Display;
+	}
+
+	if (curr != NULL) //Traverse inorder and print data
+	{
+		display(curr->leftChild);
+		cout << right << setw(3) << curr->data->getAmountIn()
+			<< setw(3) << curr->data->getAmountOut() << " ";
+		curr->data->Display();
+		display(curr->rightChild);
+	}
+}
+
 void BinTree::chopDownTree(Node *& root)
 {
 	if (root != NULL)
@@ -124,4 +146,11 @@ void BinTree::getFromTree(Node *root, const Item &theItem, Item *&foundItem)
 	{
 		getFromTree(root->rightChild, theItem, foundItem);
 	}
+}
+
+ostream& operator<<(ostream& theStream, const BinTree& tree)
+{
+	tree.Display(); //call inOrderDisplay
+	theStream << endl;
+	return theStream;
 }

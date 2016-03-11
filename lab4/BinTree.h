@@ -1,4 +1,5 @@
 #include <iostream>
+#include <iomanip>
 #include "Item.h"
 using namespace std;
 class BinTree
@@ -13,6 +14,7 @@ public:
 	bool Retrieve(const Item &theItem, Item *&foundItem);
 	bool isEmpty() const;
 	void makeEmpty();
+	void Display() const;
 
 private:
 	struct Node
@@ -23,6 +25,7 @@ private:
 	};
 	Node *root;
 	
+	void display(Node *root) const;
 	void chopDownTree(Node *&root);
 	void getFromTree(Node *root, const Item &theItem, Item *& foundItem);
 };
