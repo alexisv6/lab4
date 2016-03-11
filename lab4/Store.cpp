@@ -119,7 +119,7 @@ void Store::readTransactions(ifstream &theStream)
 								else
 								{
 									cout << "ERROR: Invalid Movie ";
-									tempMovie->Display();
+									tempMovie->display();
 									cout << endl;
 								}
 							}

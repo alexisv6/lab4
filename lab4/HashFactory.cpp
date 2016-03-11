@@ -110,5 +110,5 @@ int HashFactory::hash(char code)
 
 string HashFactory::getMediaType(char type)
 {
-	return mediaType[hash(type)];
+	return mediaTypes[hash(type)];
 }

@@ -2,6 +2,8 @@
 #include <string>
 #include "Customer.h"
 #include "Item.h"
+class Customer;
+class Transaction;
 using namespace std;
 class Transaction
 {

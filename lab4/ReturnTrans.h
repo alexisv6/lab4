@@ -1,5 +1,6 @@
 #pragma once
 #include "Transaction.h"
+class Customer;
 class ReturnTrans :
 	public Transaction
 {
