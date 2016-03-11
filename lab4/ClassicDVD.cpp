@@ -18,7 +18,7 @@ ClassicDVD::~ClassicDVD()
 {
 }
 
-void ClassicDVD::setData(ifstream &infile)
+void ClassicDVD::setData(istream &infile)
 {
 	infile.get();                      // get (and ignore) blank before director
 	getline(infile, director, ',');    // input director
@@ -38,25 +38,27 @@ Item * ClassicDVD::create()
 	return new ClassicDVD();
 }
 
-bool ClassicDVD::operator==(const ClassicDVD &rhs) const
+bool ClassicDVD::operator==(const Item &rhs) const
 {
-	return year == rhs.year && month == rhs.month && majorActors.front() == rhs.majorActors.front();
+	const ClassicDVD& theDVD = static_cast<const ClassicDVD&>(rhs);
+	return year == theDVD.year && month == theDVD.month && majorActors.front() == theDVD.majorActors.front();
 }
 
-bool ClassicDVD::operator<(const ClassicDVD &rhs) const
+bool ClassicDVD::operator<(const Item &rhs) const
 {
-	if (year < rhs.year)
+	const ClassicDVD& theDVD = static_cast<const ClassicDVD&>(rhs);
+	if (year < theDVD.year)
 		return true;
-	else if (year == rhs.year)
+	else if (year == theDVD.year)
 	{
 	
-		if (month < rhs.month)
+		if (month < theDVD.month)
 		{
 			return true;
 		}
-		else if (month == rhs.month)
+		else if (month == theDVD.month)
 		{
-			if (majorActors.front() < rhs.majorActors.front())
+			if (majorActors.front() < theDVD.majorActors.front())
 			{
 				return true;
 			}
@@ -67,10 +69,7 @@ bool ClassicDVD::operator<(const ClassicDVD &rhs) const
 			}
 		}
 	}
-	else
-	{
-		return false;
-	}
+	return false;
 }
 
 string ClassicDVD::getItem() const

@@ -1,4 +1,5 @@
-#pragma once
+#ifndef BORROW_TRANS_H
+#define BORROW_TRANS_H
 #include "Transaction.h"
 //class Customer;
 class BorrowTrans :
@@ -35,4 +36,5 @@ public:
 	*
 	*/
 };
+#endif
 

@@ -16,7 +16,7 @@ DramaDVD::~DramaDVD()
 {
 }
 
-void DramaDVD::setData(ifstream &infile)
+void DramaDVD::setData(istream &infile)
 {
 	infile.get();                       // get (and ignore) blank before director
 	getline(infile, director, ',');     // input director
@@ -33,20 +33,22 @@ Item * DramaDVD::create()
 	return new DramaDVD();
 }
 
-bool DramaDVD::operator==(const DramaDVD &rhs) const
+bool DramaDVD::operator==(const Item &rhs) const
 {
-	return director == rhs.director && title == rhs.title;
+	const DramaDVD& theDVD = static_cast<const DramaDVD&>(rhs);
+	return director == theDVD.director && title == theDVD.title;
 }
 
-bool DramaDVD::operator<(const DramaDVD &rhs) const
+bool DramaDVD::operator<(const Item &rhs) const
 {
-	if (director < rhs.director)
+	const DramaDVD& theDVD = static_cast<const DramaDVD&>(rhs);
+	if (director < theDVD.director)
 	{
 		return true;
 	}
-	else if (director == rhs.director)
+	else if (director == theDVD.director)
 	{
-		return title < rhs.title;
+		return title < theDVD.title;
 	}
 	else
 	{

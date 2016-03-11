@@ -2,13 +2,15 @@
 * A Customer is someone who uses the video store. The will have a first name and last name, as well
 * as an ID. The Customer will also have a transaction history of all borrows and returns for movies.
 */
-#pragma once
+#ifndef CUSTOMER_H
+#define CUSTOMER_H
 #include "Person.h"
 #include "Transaction.h"
 #include <iostream>
 #include <vector>
 #include <string>
 #include <cstring>
+class Transaction;
 using namespace std;
 
 class Customer: public Person
@@ -34,3 +36,4 @@ private:
 	//void print(vector)
 
 };
+#endif

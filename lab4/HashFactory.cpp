@@ -5,7 +5,7 @@
 
 HashFactory::HashFactory()
 {
-	for (int i = 0; i < MAX_TRANSACTIONS; i++) 
+	for (int i = 0; i < MAX_AMT; i++) 
 	{
 		movieGenre[i] = NULL;
 		transactionType[i] = NULL;
@@ -45,7 +45,7 @@ HashFactory::HashFactory()
 
 HashFactory::~HashFactory()
 {
-	for (int i = 0; i < MAX_TRANSACTIONS; i++)
+	for (int i = 0; i < MAX_AMT; i++)
 	{
 		if (movieGenre[i] != NULL)
 		{
@@ -93,7 +93,7 @@ Transaction * HashFactory::createTransaction(char type, istream &theStream)
 
 int HashFactory::hash(char code)
 {
-	int hashVal = code % MAX_TRANSACTIONS;
+	int hashVal = code % MAX_AMT;
 	return hashVal;
 }
 

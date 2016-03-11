@@ -13,29 +13,10 @@ DVD::~DVD()
 {
 }
 
-void DVD::setData(ifstream &infile)
-{
-	infile.get();                       // get (and ignore) blank before director
-	getline(infile, director, ',');     // input director
-
-	infile.get();                       // get (and ignore) blank before title
-	getline(infile, title, ',');        // input title
-
-	infile.get();                       // get (and ignore) blank before year
-	infile >> year;                   // input year
-}
-
 void DVD::display() const
 {
 	cout << title << " " << director << " " << year  << " " << genre << endl;
 }
-
-Item * DVD::create()
-{
-	return new DVD();
-}
-
-
 
 string DVD::getItem() const
 {

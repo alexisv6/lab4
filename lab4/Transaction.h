@@ -1,9 +1,10 @@
-#pragma once
+#ifndef TRANSACTION_H
+#define TRANSACTION_H
 #include <iostream>
 #include <string>
 #include "Customer.h"
 #include "Item.h"
-//class Customer;
+class Customer;
 //class Transaction;
 using namespace std;
 class Transaction
@@ -58,4 +59,5 @@ protected:
 	string mediaType;
 	Item* thisItem;
 };
+#endif
 

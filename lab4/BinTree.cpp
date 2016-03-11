@@ -103,7 +103,7 @@ void BinTree::display(Node * curr) const
 {
 	if (curr == root)
 	{
-		curr->data->Display;
+		curr->data->display();
 	}
 
 	if (curr != NULL) //Traverse inorder and print data
@@ -111,7 +111,7 @@ void BinTree::display(Node * curr) const
 		display(curr->leftChild);
 		cout << right << setw(3) << curr->data->getAmountIn()
 			<< setw(3) << curr->data->getAmountOut() << " ";
-		curr->data->Display();
+		curr->data->display();
 		display(curr->rightChild);
 	}
 }

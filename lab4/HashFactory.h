@@ -1,4 +1,3 @@
-#pragma once
 #ifndef HASH_FACTORY_H
 #define HASH_FACTORY_H
 #include <string>
@@ -6,14 +5,13 @@
 #include "ClassicDVD.h"
 #include "ComedyDVD.h"
 #include "DramaDVD.h"
-#include "Store.h"
 #include "Transaction.h"
 #include "BorrowTrans.h"
 #include "HistoryTrans.h"
 #include "ReturnTrans.h"
-//class DVD;
-//class Transaction;
+#include "Globals.h"
 using namespace std;
+extern const int MAX_AMT;
 class HashFactory
 {
 public:
@@ -61,9 +59,9 @@ public:
 	string getMediaType(char type);
 	
 private:
-	Item* movieGenre[MAX_GENRES];
-	Transaction* transactionType[MAX_TRANSACTIONS];
-	string mediaTypes[MAX_TRANSACTIONS];
+	Item* movieGenre[MAX_AMT];
+	Transaction* transactionType[MAX_AMT];
+	string mediaTypes[MAX_AMT];
 };
 #endif
 

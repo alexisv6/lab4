@@ -1,3 +1,5 @@
+#ifndef BIN_TREE_H
+#define BIN_TREE_H
 #include <iostream>
 #include <iomanip>
 #include "Item.h"
@@ -29,4 +31,5 @@ private:
 	void chopDownTree(Node *&root);
 	void getFromTree(Node *root, const Item &theItem, Item *& foundItem);
 };
+#endif
 

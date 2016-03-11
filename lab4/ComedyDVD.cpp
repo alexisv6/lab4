@@ -17,7 +17,7 @@ ComedyDVD::~ComedyDVD()
 {
 }
 
-void ComedyDVD::setData(ifstream &infile)
+void ComedyDVD::setData(istream &infile)
 {
 	infile.get();                       // get (and ignore) blank before director
 	getline(infile, director, ',');     // input director
@@ -34,20 +34,21 @@ Item * ComedyDVD::create()
 	return new ComedyDVD();
 }
 
-bool ComedyDVD::operator==(const ComedyDVD &rhs) const
+bool ComedyDVD::operator==(const Item &rhs) const
 {
-	
-	return title == rhs.title && year == rhs.year;
+	const ComedyDVD& theDVD = static_cast<const ComedyDVD&>(rhs);
+	return title == theDVD.title && year == theDVD.year;
 }
-bool ComedyDVD::operator<(const ComedyDVD &rhs) const
+bool ComedyDVD::operator<(const Item &rhs) const
 {
-	if (title < rhs.title)
+	const ComedyDVD& theDVD = static_cast<const ComedyDVD&>(rhs);
+	if (title < theDVD.title)
 	{
 		return true;
 	}
-	else if (title == rhs.title)
+	else if (title == theDVD.title)
 	{
-		return year < rhs.year;
+		return year < theDVD.year;
 	}
 	else
 	{

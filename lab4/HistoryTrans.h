@@ -1,4 +1,5 @@
-#pragma once
+#ifndef HISTORY_TRANS_H
+#define HISTORY_TRANS_H
 #include "Transaction.h"
 //class Customer;
 class HistoryTrans :
@@ -35,4 +36,5 @@ public:
 	*
 	*/
 };
+#endif
 

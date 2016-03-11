@@ -4,8 +4,8 @@
 * pure virtual function that will take in all data for the child classes.
 * Person is general enough that we can add onto it in the future.
 */
-
-#pragma once
+#ifndef PERSON_H
+#define PERSON_H
 #include <string>
 #include <iostream>
 using namespace std;
@@ -25,4 +25,5 @@ protected:
 	string firstName, lastName; // A Person has a first name and a last name
 
 };
+#endif
 

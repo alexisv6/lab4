@@ -49,8 +49,3 @@ int Item::getAmountOut()
 {
 	return maxCopies - numOfCopies;
 }
-
-Item * Item::create()
-{
-	return nullptr;
-}

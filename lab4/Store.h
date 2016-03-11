@@ -4,15 +4,14 @@
 #include <iostream>
 #include <iomanip>
 #include "Item.h"
-#include "HashFactory.h"
 #include "BinTree.h"
 #include "Customer.h"
-//class Transaction;
+#include "HashFactory.h"
+#include "Globals.h"
 using namespace std;
-const int MAX_COPIES = 10;
-const int MAX_CUSTOMERS = 10000;
-const int MAX_GENRES = 27;
-const int MAX_TRANSACTIONS = 26;
+extern const int MAX_COPIES;
+extern const int MAX_CUSTOMERS;
+extern const int MAX_AMT;
 
 class Store
 {
@@ -90,6 +89,6 @@ private:
 	string name;
 	// Array with Bintrees representing movie
 	// inventory by genre
-	BinTree movieInventory[MAX_GENRES];
+	BinTree movieInventory[MAX_AMT];
 };
 #endif

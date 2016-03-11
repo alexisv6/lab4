@@ -1,4 +1,5 @@
-#pragma once
+#ifndef RETURN_TRANSACTION_H
+#define RETURN_TRANSACTION_H
 #include "Transaction.h"
 //class Customer;
 class ReturnTrans :
@@ -35,4 +36,5 @@ public:
 	*
 	*/
 };
+#endif
 

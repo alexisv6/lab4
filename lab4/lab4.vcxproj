@@ -156,6 +156,7 @@
     <ClInclude Include="Customer.h" />
     <ClInclude Include="DramaDVD.h" />
     <ClInclude Include="DVD.h" />
+    <ClInclude Include="Globals.h" />
     <ClInclude Include="HashFactory.h" />
     <ClInclude Include="HistoryTrans.h" />
     <ClInclude Include="Item.h" />
