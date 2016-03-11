@@ -30,7 +30,7 @@ void DramaDVD::setData(ifstream &infile)
 
 Item * DramaDVD::create()
 {
-	return nullptr;
+	return new DramaDVD();
 }
 
 bool DramaDVD::operator==(const DramaDVD &rhs) const

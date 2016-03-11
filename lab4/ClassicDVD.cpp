@@ -35,7 +35,7 @@ void ClassicDVD::setData(ifstream &infile)
 
 Item * ClassicDVD::create()
 {
-	return nullptr;
+	return new ClassicDVD();
 }
 
 bool ClassicDVD::operator==(const ClassicDVD &rhs) const

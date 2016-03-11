@@ -32,7 +32,7 @@ void DVD::display() const
 
 Item * DVD::create()
 {
-	return nullptr;
+	return new DVD();
 }
 
 

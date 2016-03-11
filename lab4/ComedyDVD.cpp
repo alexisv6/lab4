@@ -31,7 +31,7 @@ void ComedyDVD::setData(ifstream &infile)
 
 Item * ComedyDVD::create()
 {
-	return nullptr;
+	return new ComedyDVD();
 }
 
 bool ComedyDVD::operator==(const ComedyDVD &rhs) const
