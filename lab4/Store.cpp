@@ -75,12 +75,16 @@ void Store::readTransactions(ifstream &theStream)
 		{
 			break;
 		}
-		else if (theStream.get() == '\n') //Do I need FIX
-		{
-			actionType = ' ';
-		}
 		else
 		{
+			if (theStream.get() == '\n')
+			{
+				if (actionType == 'I')
+				{
+					this-> diplayInventory();
+				}
+				break;
+			}
 			//create trans object
 			Transaction* newTransaction =
 				factory.createTransaction(actionType, theStream);
@@ -99,7 +103,7 @@ void Store::readTransactions(ifstream &theStream)
 					char mediaCode = ' ';
 					switch (actionType)
 					{
-					case 'B' || 'R':
+					case ('B' || 'R'):
 						theStream >> mediaCode;
 						media = factory.getMediaType(mediaCode);
 						if (media != "")
@@ -203,6 +207,22 @@ void Store::PopulateAccounts(istream & theStream)
 		customerAccounts[newCustomer->getID()] = *newCustomer;
 		delete newCustomer;
 		newCustomer = NULL;
+	}
+}
+
+void Store::diplayInventory() const
+{
+	if (name != "")
+	{
+		cout << "Inventory list of Items from " << name << endl;
+		cout << "------------------------------------------------------------------" 
+			<< endl;
+	}
+
+	for (int i = 0; i < MAX_AMT; i++)
+	{
+		if (!movieInventory[i].isEmpty())
+			movieInventory[i].Display();
 	}
 }
 
