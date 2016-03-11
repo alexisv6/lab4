@@ -2,6 +2,7 @@
 #define STORE_H
 #include <string>
 #include <iostream>
+#include <iomanip>
 #include "Item.h"
 #include "HashFactory.h"
 #include "BinTree.h"
@@ -81,7 +82,7 @@ public:
 
 private:
 	// Array that holds customer records
-	Customer customerArray[MAX_CUSTOMERS];
+	Customer customerAccounts[MAX_CUSTOMERS];
 	// Creates the items
 	HashFactory factory;
 	// name of the business
