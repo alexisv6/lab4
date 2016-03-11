@@ -73,8 +73,7 @@ Transaction * HashFactory::createTransaction(char type, istream &theStream)
 
 int HashFactory::hash(char code)
 {
-	int hashVal = code % MAX_AMT;
-	return hashVal;
+	return code - 'A';
 }
 
 string HashFactory::getMediaType(char type)
