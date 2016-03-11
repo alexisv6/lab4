@@ -9,37 +9,17 @@ HashFactory::HashFactory()
 	{
 		movieGenre[i] = NULL;
 		transactionType[i] = NULL;
+		mediaTypes[i] = "";
 	}
-	char possibleGenres[3] = { 'C', 'D', 'F' };
-	char possibleTransactions[3] = { 'B', 'H', 'R' };
-	for each (char genre in possibleGenres)
-	{
-		switch (genre)
-		{
-		case 'C':
-			movieGenre[hash(genre)] = new ClassicDVD();
-		case 'D':
-			movieGenre[hash(genre)] = new DramaDVD();
-		case 'F':
-			movieGenre[hash(genre)] = new ComedyDVD();
-		default:
-			break;
-		}
-	}
-	for each (char type in possibleTransactions)
-	{
-		switch (type)
-		{
-		case 'B':
-			transactionType[hash(type)] = new BorrowTrans();
-		case 'R':
-			transactionType[hash(type)] = new ReturnTrans();
-		case 'H':
-			transactionType[hash(type)] = new HistoryTrans();
-		default:
-			break;
-		}
-	}
+	movieGenre[2] = new ClassicDVD();
+	movieGenre[3] = new DramaDVD();
+	movieGenre[5] = new ComedyDVD();
+
+	transactionType[1] = new BorrowTrans();
+	transactionType[7] = new HistoryTrans();
+	transactionType[17] = new ReturnTrans();
+
+	mediaTypes[3] = "DVD";
 }
 
 

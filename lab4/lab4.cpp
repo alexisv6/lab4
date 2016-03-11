@@ -31,9 +31,11 @@ int main()
 	// Create the Store object with name
 	Store myStore("Super Videos");
 	// stock the inventory
+	myStore.doInventory(theMovies);
 	// create the customer accounts
 	myStore.PopulateAccounts(theCustomers);
 	// read and do the transactions
+	myStore.readTransactions(theCommands);
 	return 0;
 }
 
