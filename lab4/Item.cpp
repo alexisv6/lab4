@@ -42,7 +42,7 @@ void Item::decreaseCopies()
 {
 	if (numOfCopies > 0)
 	{
-		numOfCopies++;
+		numOfCopies--;
 	}
 }
 
