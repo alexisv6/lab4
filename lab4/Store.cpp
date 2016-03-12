@@ -24,7 +24,8 @@ Store::~Store()
 {
 }
 
-
+// Read the movies files create the movie objs
+// place them in the correct bintree in movie inventory
 void Store::doInventory(istream &theStream)
 {
 	char code = ' ';
@@ -56,6 +57,9 @@ void Store::doInventory(istream &theStream)
 	}
 }
 
+// Read commands from file 
+// creates a transaction based on action code
+// allow for borrow, rent, history, and inventory
 void Store::readTransactions(ifstream &theStream)
 {
 	char actionType = ' ';
@@ -193,6 +197,9 @@ void Store::readTransactions(ifstream &theStream)
 	}
 }
 
+// reads from the accounts file
+// creates the accounts for each person
+// customers are stored in array for unique id
 void Store::PopulateAccounts(istream & theStream)
 {
 	for (;;)
@@ -211,6 +218,7 @@ void Store::PopulateAccounts(istream & theStream)
 	}
 }
 
+// Display the inventory of the store
 void Store::diplayInventory() const
 {
 	if (name != "")
@@ -229,11 +237,14 @@ void Store::diplayInventory() const
 	}
 }
 
+// does the customer id exist 
+// in customer accounts
 bool Store::customerExists(int id) const
 {
 	return customerAccounts[id].getID() != 0;
 }
 
+// return the store's name
 string Store::getStoreName() const
 {
 	return this->name;

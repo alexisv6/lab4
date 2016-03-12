@@ -2,7 +2,11 @@
 #include "HashFactory.h"
 
 
-
+/*
+* initialize the arrays
+* Hash the genres into genreArray
+* hash the transtypes into TransType Array
+*/
 HashFactory::HashFactory()
 {
 	for (int i = 0; i < MAX_AMT; i++) 
@@ -22,7 +26,12 @@ HashFactory::HashFactory()
 	mediaTypes[3] = "DVD";
 }
 
-
+/*
+* for (entire movie genre and tranaction type)
+*	delete genre BINtrees in each bucket
+*	delete trans types in each bucket
+*	set pointers to null
+*/
 HashFactory::~HashFactory()
 {
 	for (int i = 0; i < MAX_AMT; i++)
@@ -41,6 +50,14 @@ HashFactory::~HashFactory()
 	}
 }
 
+/*
+* takes in code and ifstream
+* hashes the code to check if valid movie code
+* if (invalid)
+*	throw some error about bad input
+* if (valid)
+*	create the movie item that will be returned
+*/
 Item * HashFactory::createMovie(char code, istream &theStream)
 {
 	string temp;
@@ -56,6 +73,14 @@ Item * HashFactory::createMovie(char code, istream &theStream)
 	}
 }
 
+/*
+* takes in code and ifstream
+* hashes the code to check if valid transaction code
+* if (invalid)
+*	throw some error about bad input
+* if (valid)
+*	create the trasnaction item that will be returned
+*/
 Transaction * HashFactory::createTransaction(char type, istream &theStream)
 {
 	string temp;
@@ -71,6 +96,10 @@ Transaction * HashFactory::createTransaction(char type, istream &theStream)
 	}
 }
 
+/*
+*	function that will take a char passed in
+*   and hash it to an index within the genre and trans arrays
+*/
 int HashFactory::hash(char code)
 {
 	return code - 'A';
