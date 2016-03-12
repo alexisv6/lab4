@@ -110,11 +110,11 @@ void BinTree::display(Node * curr) const
 	if (curr != NULL) //Traverse inorder and print data
 	{
 		display(curr->leftChild);
-		cout << right << setw(3) << curr->data->getAmountIn()
-			<< setw(3) << curr->data->getAmountOut() << " ";
+		cout << left << setw(3) << curr->data->getAmountIn();
 		curr->data->display();
 		display(curr->rightChild);
 	}
+	cout << endl;
 }
 
 void BinTree::chopDownTree(Node *& root)

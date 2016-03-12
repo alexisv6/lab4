@@ -30,6 +30,7 @@ public:
 	virtual bool operator==(const Item &other) const = 0;
 	virtual bool operator<(const Item &other) const = 0;
 	virtual void displayHeader()const = 0;
+	virtual string getItem()const = 0;
 protected:
 	int maxCopies, numOfCopies; // holds the maximum number of copies and the number of copies currently
 								// in the store

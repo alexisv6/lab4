@@ -93,17 +93,17 @@ string ClassicDVD::getItem() const
 
 void ClassicDVD::display() const
 {
-	cout << left << setw(9) << title << setw(5) << month << setw(5) << year << setw(9) << director;
+	cout << left << setw(22) << title << setw(5) << month << setw(5) << year << setw(20) << director;
 	string allActors;
 	for (int i = 0; i < (int)majorActors.size(); i++)
 	{
-		allActors += majorActors[i];
+		allActors += majorActors[i] + " ";
 	}
-	cout << left << setw(27) << allActors << setw(5) << numOfCopies << endl;
+	cout << left << setw(20) << allActors << endl;
 }
 
 void ClassicDVD::displayHeader() const
 {
 	cout << "-----------------------------------Classic----------------------------------- " << endl;
-	cout << "Title    Month Year	 Director    Actors                               Stock " << endl;
+	cout << "Title                 Month Year	 Director    Actors          Stock " << endl;
 }
