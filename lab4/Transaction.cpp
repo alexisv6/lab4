@@ -21,6 +21,7 @@ void Transaction::setData(string media, Item * theItem, Customer * theCustomer)
 void Transaction::Display() const
 {
 	cout << mediaType << " " << transactionType << " ";
+	thisItem->display();
 }
 
 Transaction * Transaction::create()
