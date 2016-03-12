@@ -54,7 +54,7 @@ string Customer::getData()
 void Customer::displayHistory() const
 {
 	cout << "Customer ID : " << id << "      Name : " << firstName << " " << 
-		lastName << right << "HISTORY" <<endl;
+		lastName << endl;
 	cout << "-----------------------------------------------------------------"
 		<< endl;
 	
