@@ -24,6 +24,7 @@ public:
 	virtual string getItem() const; // return the ClassicDVDas a string
 private:
 	vector<string> majorActors;
+	int month;
 
 
 };
