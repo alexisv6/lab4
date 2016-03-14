@@ -38,17 +38,35 @@ Item * ClassicDVD::create()
 	return nullptr;
 }
 
-bool ClassicDVD::operator==(const ClassicDVD &) const
+bool ClassicDVD::operator==(const ClassicDVD &rhs) const
 {
-	return false;
+	return year == rhs.year && month == rhs.month && majorActors.front() == rhs.majorActors.front();
 }
 
-bool ClassicDVD::operator<(const ClassicDVD &) const
+bool ClassicDVD::operator<(const ClassicDVD &rhs) const
 {
-	return false;
+	if (year < rhs.year)
+		return true;
+	else if (year == rhs.year)
+	{
+		if (majorActors.front() < rhs.majorActors.front())
+		{
+			return true;
+		}
+
+		else
+		{
+			return false;
+		}
+	}
+
+	else
+	{
+		return false;
+	}
 }
 
 string ClassicDVD::getItem() const
 {
-	return string();
+	return title;
 }
