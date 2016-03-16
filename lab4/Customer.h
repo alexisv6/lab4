@@ -7,6 +7,7 @@
 #include "Transaction.h"
 #include <iostream>
 #include <vector>
+#include <string>
 using namespace std;
 
 class Customer: public Person
@@ -17,11 +18,12 @@ public:
 	Customer(const Customer&);
 	~Customer();
 
+
 	int getID() const; // return the customer ID
 	virtual void setData(ifstream&); // read the Customer's data from a file and save all information for them
 	string getData(); // return the ID number, first name, last name as a string
 	void displayHistory() const; // print out the Customer’s borrow and return history to the display
-	void addHistoryItem(Transaction); // add a transaction to the Customer’s history
+	void addHistoryItem(Transaction &); // add a transaction to the Customer’s history
 	bool operator==(const Customer&) const; // compare two Customers IDs and check if they are equal
 	bool operator!=(const Customer&) const; // compare two Customers IDs and check if they are not equal
 	bool operator>(const Customer&) const; // compare two Customers IDs and see if this one is greater
