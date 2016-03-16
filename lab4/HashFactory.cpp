@@ -1,3 +1,4 @@
+#include "stdafx.h"
 #include "HashFactory.h"
 
 
@@ -11,18 +12,6 @@ HashFactory::HashFactory()
 	}
 	char possibleGenres[3] = { 'C', 'D', 'F' };
 	char possibleTransactions[3] = { 'B', 'H', 'R' };
-	char possibleMediaTypes[1] = { 'D' };
-	for each (char mediaType in possibleMediaTypes) 
-	{
-		int hashVal = hash(mediaType);
-		switch (mediaType)
-		{
-		case 'D':
-			mediaTypes[hashVal] = "DVD";
-		default:
-			break;
-		}
-	}
 	for each (char genre in possibleGenres)
 	{
 		switch (genre)
