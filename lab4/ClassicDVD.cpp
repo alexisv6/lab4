@@ -49,17 +49,24 @@ bool ClassicDVD::operator<(const ClassicDVD &rhs) const
 		return true;
 	else if (year == rhs.year)
 	{
-		if (majorActors.front() < rhs.majorActors.front())
+	
+		if (month < rhs.month)
 		{
 			return true;
 		}
-
-		else
+		else if (month == rhs.month)
 		{
-			return false;
+			if (majorActors.front() < rhs.majorActors.front())
+			{
+				return true;
+			}
+
+			else
+			{
+				return false;
+			}
 		}
 	}
-
 	else
 	{
 		return false;
@@ -69,4 +76,14 @@ bool ClassicDVD::operator<(const ClassicDVD &rhs) const
 string ClassicDVD::getItem() const
 {
 	return title;
+}
+
+void ClassicDVD::display() const
+{
+	cout << title << " " << director << " " << year << " " << genre;
+	for (int i = 0; i < majorActors.size(); i++)
+	{
+		cout << " " << majorActors[i];
+	}
+	cout << endl;
 }
