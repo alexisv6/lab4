@@ -58,7 +58,7 @@ void Customer::displayHistory() const
 	for (int i = 0; i < transHistory.size(); i++)
 	{
 		cout << " ";
-		&transHistory[i].Display;
+		transHistory[i].Display;
 	}
 	cout << endl;
 }

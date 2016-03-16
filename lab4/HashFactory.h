@@ -1,3 +1,4 @@
+#pragma once
 #ifndef HASH_FACTORY_H
 #define HASH_FACTORY_H
 #include <string>
@@ -10,8 +11,8 @@
 #include "BorrowTrans.h"
 #include "HistoryTrans.h"
 #include "ReturnTrans.h"
-class DVD;
-class Transaction;
+//class DVD;
+//class Transaction;
 using namespace std;
 class HashFactory
 {

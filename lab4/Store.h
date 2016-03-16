@@ -7,7 +7,7 @@
 #include "HashFactory.h"
 #include "BinTree.h"
 #include "Customer.h"
-class Transaction;
+//class Transaction;
 using namespace std;
 const int MAX_COPIES = 10;
 const int MAX_CUSTOMERS = 10000;

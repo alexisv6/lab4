@@ -1,6 +1,6 @@
 #pragma once
 #include "Transaction.h"
-class Customer;
+//class Customer;
 class HistoryTrans :
 	public Transaction
 {

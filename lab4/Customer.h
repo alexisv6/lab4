@@ -27,13 +27,6 @@ public:
 	void addHistoryItem(Transaction &); // add a transaction to the Customer’s history
 	bool operator==(const Customer&) const; // compare two Customers IDs and check if they are equal
 	bool operator!=(const Customer&) const; // compare two Customers IDs and check if they are not equal
-	bool operator>(const Customer&) const; // compare two Customers IDs and see if this one is greater
-	bool operator<(const Customer&) const; // compare two Customers IDs and see if this one is lesser
-	bool operator>=(const Customer&) const; // compare two Customers IDs and see if this one is greater or 
-											//equal
-	bool operator<=(const Customer&) const; // compare two Customers IDs and see if this one is lesser or 
-											//equal
-
 private:
 	int id; // the unique ID for the Customer
 	vector<Transaction> transHistory; // a vector of all the borrowing and returns the Customer has done
