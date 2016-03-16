@@ -1,4 +1,4 @@
-//#include "stdafx.h"
+#include "stdafx.h"
 #include "Customer.h"
 
 Customer::Customer() :id(0)
