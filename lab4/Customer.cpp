@@ -55,10 +55,11 @@ void Customer::displayHistory() const
 {
 	cout << "Customer ID = " << id << " " << lastName << " " << firstName;
 	
-	for (int i = 0; i < (int)transHistory.size(); i++)
+	for (int i = 0; i < transHistory.size(); i++)
 	{
 		cout << " ";
 		transHistory[i].Display();
+		cout << i;
 	}
 	cout << endl;
 }

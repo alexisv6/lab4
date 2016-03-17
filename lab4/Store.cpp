@@ -99,7 +99,8 @@ void Store::readTransactions(ifstream &theStream)
 					char mediaCode = ' ';
 					switch (actionType)
 					{
-					case 'B' || 'R':
+					case 'B':
+					//case 'R':
 						theStream >> mediaCode;
 						media = factory.getMediaType(mediaCode);
 						if (media != "")
