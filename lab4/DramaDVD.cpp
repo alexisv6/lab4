@@ -82,5 +82,5 @@ void DramaDVD::display() const
 void DramaDVD::displayHeader() const
 {
 	cout << "-----------------------------------Drama----------------------------------- " << endl;
-	cout << "Title                         Year	Director                        Stock " << endl;
+	cout << "Stock     Title                         Year	Director                         " << endl;
 }
