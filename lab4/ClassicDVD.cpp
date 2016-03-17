@@ -37,6 +37,15 @@ void ClassicDVD::setData(istream &infile)
 	infile >> month;
 	infile >> year;           // input month and year
 }
+void ClassicDVD::setData2(istream& infile)
+{
+	infile >> month;
+	infile >> year;
+	infile >> actorFirstName;
+	infile >> actorLastName;
+	string newActor = actorFirstName + " " + actorLastName;
+	majorActors.push_back(newActor);
+}
 
 Item * ClassicDVD::create()
 {

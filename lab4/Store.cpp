@@ -83,7 +83,6 @@ void Store::readTransactions(ifstream &theStream)
 				{
 					this-> diplayInventory();
 				}
-				break;
 			}
 			//create trans object
 			Transaction* newTransaction =
@@ -103,7 +102,8 @@ void Store::readTransactions(ifstream &theStream)
 					char mediaCode = ' ';
 					switch (actionType)
 					{
-					case ('B' || 'R'):
+					case 'B':
+					case 'R':
 						theStream >> mediaCode;
 						media = factory.getMediaType(mediaCode);
 						if (media != "")
@@ -112,7 +112,7 @@ void Store::readTransactions(ifstream &theStream)
 							tempMovie = factory.createMovie(movieType, theStream);
 							if (tempMovie != NULL) // was genre found
 							{
-								tempMovie->setData(theStream);
+								tempMovie->setData2(theStream);
 
 								found = movieInventory->Retrieve(*tempMovie, theMovie);
 								if (found)
@@ -228,7 +228,7 @@ void Store::diplayInventory() const
 
 bool Store::customerExists(int id) const
 {
-	return customerAccounts[id].getID() == 0;
+	return customerAccounts[id].getID() != 0;
 }
 
 string Store::getStoreName() const

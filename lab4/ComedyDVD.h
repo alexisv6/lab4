@@ -9,6 +9,7 @@ public:
 	~ComedyDVD();
 
 	virtual void setData(istream &); // read the information from a file and store all of it
+	virtual void setData2(istream &);
 	virtual Item* create(); // create a pointer to an Item
 	virtual bool operator==(const Item &) const; //will check and compare two 
 										//ComedyDVDs see if they are equal

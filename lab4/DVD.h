@@ -14,6 +14,7 @@ public:
 	virtual ~DVD();
 
 	virtual void setData(istream&) = 0;
+	virtual void setData2(istream &) = 0;
 	virtual void display() const; // displays the DVD and all information related to it
 	virtual Item * create() = 0; // create a pointer to the Item
 	virtual string getItem() const; // return the DVD and all information as a string

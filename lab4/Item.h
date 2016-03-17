@@ -18,6 +18,7 @@ public:
 
 	virtual void setData(istream &) = 0; // a pure virtual function that will get the data from a file and set all
 										  //data
+	virtual void setData2(istream &) = 0;
 	virtual void display()const = 0; // a pure virtual function that will display all information about the given item
 	void setMaxCopies(const int); // sets the maximum number of copies to hold in the store
 	void increaseCopies();	 //increases the current copies by one for returns

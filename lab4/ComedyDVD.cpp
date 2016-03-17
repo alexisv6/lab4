@@ -33,6 +33,14 @@ void ComedyDVD::setData(istream &infile)
 	infile >> year;                   // input year
 }
 
+void ComedyDVD::setData2(istream &infile)
+{
+	infile.get();                       // get (and ignore) blank before title
+	getline(infile, title, ',');
+
+	infile >> year;
+}
+
 Item * ComedyDVD::create()
 {
 	return new ComedyDVD();

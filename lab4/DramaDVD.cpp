@@ -33,6 +33,16 @@ void DramaDVD::setData(istream &infile)
 	infile >> year;                   // input year
 }
 
+void DramaDVD::setData2(istream &infile)
+{
+
+	infile.get();                       // get (and ignore) blank before title
+	getline(infile, director, ',');
+
+	infile.get();                       // get (and ignore) blank before title
+	getline(infile, title, ',');
+}
+
 Item * DramaDVD::create()
 {
 	return new DramaDVD();
