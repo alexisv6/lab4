@@ -77,7 +77,7 @@ string DramaDVD::getItem() const
 }
 void DramaDVD::display() const
 {
-	cout << left << setw(30) << title << setw(5) << year << setw(38) << director << setw(5) << numOfCopies << endl << endl;
+	cout << left << setw(30) << title << setw(5) << year << setw(38) << director << endl;
 }
 void DramaDVD::displayHeader() const
 {

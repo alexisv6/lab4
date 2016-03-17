@@ -99,7 +99,7 @@ void ClassicDVD::display() const
 	{
 		allActors += majorActors[i] + " ";
 	}
-	cout << left << setw(20) << allActors  << setw(5) << numOfCopies << endl << endl;
+	cout << left << setw(20) << allActors << endl;
 }
 
 void ClassicDVD::displayHeader() const
