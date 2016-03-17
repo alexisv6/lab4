@@ -223,7 +223,10 @@ void Store::diplayInventory() const
 	for (int i = 0; i < MAX_AMT; i++)
 	{
 		if (!movieInventory[i].isEmpty())
+		{
+			cout << "------------------------------" << i << "-----------------------------------" << endl;
 			movieInventory[i].Display();
+		}
 	}
 }
 

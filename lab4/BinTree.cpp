@@ -103,10 +103,6 @@ void BinTree::Display() const
 
 void BinTree::display(Node * curr) const
 {
-	if (curr == root)
-	{
-		curr->data->display();
-	}
 
 	if (curr != NULL) //Traverse inorder and print data
 	{
