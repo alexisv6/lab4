@@ -37,7 +37,7 @@ bool BinTree::Insert(Item * theItem, int amt)
 		{								//dont insert if equal
 			if (*itemPtr->data == *curr->data) 
 			{
-				int copies = curr->data->getAmountIn() + curr->data->getAmountOut();
+				int copies = itemPtr->data->getAmountIn() + curr->data->getAmountOut();
 				curr->data->setMaxCopies(copies + amt);
 				delete itemPtr;  
 				itemPtr = NULL;
