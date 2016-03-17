@@ -208,7 +208,7 @@ void Store::PopulateAccounts(istream & theStream)
 
 bool Store::customerExists(int id) const
 {
-	return customerAccounts[id].getID() == 0;
+	return customerAccounts[id].getID() != 0;
 }
 
 string Store::getStoreName() const
