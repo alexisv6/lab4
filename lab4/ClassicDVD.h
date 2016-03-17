@@ -21,6 +21,7 @@ public:
 														//related to it
 private:
 	vector<string> majorActors;
+	string actorFirstName, actorLastName;
 	int month;
 
 

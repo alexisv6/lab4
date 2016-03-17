@@ -29,13 +29,13 @@ int main()
 		return 1;
 	}
 	// Create the Store object with name
-	Store myStore("Super Videos");
+	Store *myStore = new Store();// "Super Videos");
 	// stock the inventory
-	myStore.doInventory(theMovies);
+	myStore->doInventory(theMovies);
 	// create the customer accounts
-	myStore.PopulateAccounts(theCustomers);
+	myStore->PopulateAccounts(theCustomers);
 	// read and do the transactions
-	myStore.readTransactions(theCommands);
+	myStore->readTransactions(theCommands);
 	return 0;
 }
 

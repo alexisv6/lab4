@@ -23,7 +23,7 @@ void ClassicDVD::setData(istream &infile)
 	string max = "";
 	infile.get();
 	getline(infile, max, ',');
-	maxCopies = stoi(max);
+	setMaxCopies(stoi(max));
 	infile.get();                      // get (and ignore) blank before director
 	getline(infile, director, ',');    // input director
 
@@ -31,10 +31,11 @@ void ClassicDVD::setData(istream &infile)
 	getline(infile, title, ',');       // input title
 
 	infile.get();                      // get (and ignore) blank before actor
-	string newActor;
-	infile >> newActor;   // input star's name
+	infile >> actorFirstName >> actorLastName;   // input star's name
+	string newActor = actorFirstName + " " + actorLastName;
 	majorActors.push_back(newActor);
-	infile >> month >> year;           // input month and year
+	infile >> month;
+	infile >> year;           // input month and year
 }
 
 Item * ClassicDVD::create()

@@ -21,7 +21,7 @@ void DramaDVD::setData(istream &infile)
 	string max = "";
 	infile.get();
 	getline(infile, max, ',');
-	maxCopies = stoi(max);
+	setMaxCopies(stoi(max));
 
 	infile.get();                       // get (and ignore) blank before director
 	getline(infile, director, ',');     // input director
