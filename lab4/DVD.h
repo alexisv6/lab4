@@ -17,7 +17,7 @@ public:
 	virtual void setData2(istream &) = 0;
 	virtual void display() const; // displays the DVD and all information related to it
 	virtual Item * create() = 0; // create a pointer to the Item
-	virtual string getItem() const; // return the DVD and all information as a string
+	virtual string getItem() const =0; // return the DVD and all information as a string
 	string getDirector() const; // return the director
 	string getTitle() const; // return the title
 	string getGenre() const; // return the genre
