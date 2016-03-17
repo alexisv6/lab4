@@ -77,13 +77,14 @@ void Store::readTransactions(ifstream &theStream)
 		}
 		else
 		{
-			if (theStream.get() == '\n')
-			{
+			//if (theStream.get() == '\n')
+			//{
 				if (actionType == 'I')
 				{
 					this-> diplayInventory();
+					theStream >> actionType;
 				}
-			}
+			//}
 			//create trans object
 			Transaction* newTransaction =
 				factory.createTransaction(actionType, theStream);
