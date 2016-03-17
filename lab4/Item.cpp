@@ -22,6 +22,12 @@ void Item::setMaxCopies(const int maxAmount)
 	{
 		numOfCopies = maxCopies;
 	}
+	int copies = (this->getAmountIn() + this->getAmountOut());
+	if (numOfCopies < maxCopies)
+	{
+		int increment = maxCopies - numOfCopies;
+		this->numOfCopies += increment;
+	}
 }
 
 void Item::increaseCopies()
