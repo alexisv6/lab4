@@ -16,6 +16,8 @@ public:
 	virtual bool operator<(const Item &) const; // checking the Title of the
 						//movie, and then by the date that it was released
 	virtual string getItem() const; // return the ComedyDVD as a string
+	virtual void display() const;
+	virtual void displayHeader() const;
 
 
 };

@@ -19,6 +19,7 @@ public:
 	virtual string getItem() const; // return the ClassicDVDas a string
 	virtual void display() const; // displays the DVD and all information
 														//related to it
+	virtual void displayHeader() const;
 private:
 	vector<string> majorActors;
 	string actorFirstName, actorLastName;

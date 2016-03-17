@@ -24,6 +24,7 @@ public:
 	int getYear() const; // return the year
 	virtual bool operator==(const Item &other) const = 0;
 	virtual bool operator<(const Item &other) const = 0;
+	virtual void displayHeader() const = 0;
 protected:
 	string director, title, genre; // 
 	int year; // holds the given year

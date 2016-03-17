@@ -21,6 +21,8 @@ public:
 	virtual bool operator<(const Item&) const; //checking the director of
 											//the movie, and then by the title
 	virtual string getItem() const; // return the DramaDVDas a string
+	virtual void display() const;
+	virtual void displayHeader() const;
 
 
 };

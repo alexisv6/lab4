@@ -8,6 +8,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <iomanip>
 using namespace std;
 class Item
 {
@@ -28,6 +29,7 @@ public:
 	virtual Item * create() = 0; // creates a pointer to an Item
 	virtual bool operator==(const Item &other) const = 0;
 	virtual bool operator<(const Item &other) const = 0;
+	virtual void displayHeader()const = 0;
 protected:
 	int maxCopies, numOfCopies; // holds the maximum number of copies and the number of copies currently
 								// in the store

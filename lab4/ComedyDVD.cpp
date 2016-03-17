@@ -71,3 +71,13 @@ string ComedyDVD::getItem() const
 {
 	return title;
 }
+void ComedyDVD::display() const
+{
+	cout << left << setw(30) << title << setw(5) << year << setw(38) << director << setw(5) << numOfCopies << endl;
+}
+
+void ComedyDVD::displayHeader() const
+{
+	cout << "-----------------------------------Comedies----------------------------------- " << endl;
+	cout << "Title                         Year	Director                              Stock " << endl;
+}
