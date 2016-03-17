@@ -233,6 +233,7 @@ void Store::diplayInventory() const
 		if (!movieInventory[i].isEmpty())
 		{
 			movieInventory[i].Display();
+			cout << endl;
 		}
 	}
 }

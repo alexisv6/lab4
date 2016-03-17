@@ -114,7 +114,6 @@ void BinTree::display(Node * curr) const
 		curr->data->display();
 		display(curr->rightChild);
 	}
-	cout << endl;
 }
 
 void BinTree::chopDownTree(Node *& root)
