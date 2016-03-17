@@ -115,7 +115,7 @@ void Store::readTransactions(ifstream &theStream)
 							{
 								tempMovie->setData2(theStream);
 
-								found = movieInventory->Retrieve(*tempMovie, theMovie);
+								found = movieInventory[factory.hash(movieType)].Retrieve(*tempMovie, theMovie);
 								if (found)
 								{
 									newTransaction->setData(media, theMovie, theCustomer);
